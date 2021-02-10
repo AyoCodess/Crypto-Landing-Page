@@ -1,0 +1,57 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+/* this will universally set the parameters of the area we are working so our website in each browser looks the same. */
+/* THIS IS A BASIC RESET (*) */
+* {
+  margin: 0;
+  padding: 0;
+  /* removes borders and paddings from the total width or total height that we specify for a box */
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+body {
+  /* if lato is not available any sans-serif be used. */
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  /* this determine the gap between each line of text, its 1.7 more than the standard */
+  line-height: 1.7;
+  color: #777777;
+  /* where adding a padded border around the entire webpage to give it a nice WHITE bordered affect */
+  padding: 30px;
+}
+.header {
+  /* vh means the element should always be 95% of what ever the user can see on his browser. */
+  height: 95vh;
+  /* to get an image url, we used .. to go up one directory, then we can select it */
+  /* later we add a gradient, we want the image to be on top, so the image is the last thing, that gets called in the line, we essentially have two background images, separated by comers */
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.801), rgba(40, 180, 133, 0.801)), url(ae3e47cf55aeae50fb69b8085eb20200);
+  /* cover -  whatever the width of the view-port (what the user can see at anytime) it will always try to fit the element inside of the box */
+  background-size: cover;
+  /* ensures the image is always hinged to the top of the container, no matter what. if you change the size of the browser you will see the bottom of the image gets cropped but the top does not, use chrome dev tools to change it and see what happens */
+  background-position: top;
+  /* now we want clip part of the header so it gives it an odd shape and looks really cool. we use a polygon to hide some of header shape, to make it look like another shane completely. the (4) x, y placeholders, represent each corder of the square, we replace them with coordinates that will change them to produce a new shape, you can make any share you want  clip-path: polygon(0% 0%, 100% 50%, 100% 50%, 0% 100%); = triangle (x = length, y = height) use CSS clip math maker to do this for you, we use 75vh, so when the view port changes, it changes the shape dynamically*/
+  clip-path: polygon(0% 0%, 100% 0%, 100% 75vh, 0% 100%);
+}
+.logo-box {
+  display: flex;
+  height: 40px;
+}
+.logo {
+  padding: 2rem;
+}
+
