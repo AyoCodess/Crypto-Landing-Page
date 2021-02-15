@@ -131,9 +131,10 @@ body {
 .heading-primary {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    height: 70%; //70|% of the heading container
+    // height: 40%; //70|% of the heading container
+    margin-top: 25rem;
 }
 .heading-primary-main {
     display: block;
@@ -201,15 +202,26 @@ body {
 
 .btn-container {
     display: flex;
+    margin-top: 7rem;
     justify-content: center;
     text-align: center;
-    font-size: 10rem;
+    font-size: 2rem;
     text-transform: uppercase;
 }
 
 .btn-white {
-    margin-right: 10rem;
+    display: flex;
+    // position: absolute;
+    width: 20rem;
+    height: 5rem;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 100px;
+    font-weight: 400;
+    font-size: 1.5rem;
+
+    color: gray;
+    background-color: white;
     text-transform: uppercase;
 }
-
-// not working

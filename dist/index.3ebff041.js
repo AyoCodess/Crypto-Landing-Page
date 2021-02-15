@@ -140,8 +140,8 @@
       this[globalName] = mainExports;
     }
   }
-})({"6IKGt":[function(require,module,exports) {
-var HMR_HOST = null;var HMR_PORT = 55729;var HMR_SECURE = false;var HMR_ENV_HASH = "d751713988987e9331980363e24189ce";module.bundle.HMR_BUNDLE_ID = "1cf92b8ac789bf0c8bd4b6d53ebff041";/* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE */
+})({"25D9z":[function(require,module,exports) {
+var HMR_HOST = null;var HMR_PORT = 1234;var HMR_SECURE = false;var HMR_ENV_HASH = "d751713988987e9331980363e24189ce";module.bundle.HMR_BUNDLE_ID = "1cf92b8ac789bf0c8bd4b6d53ebff041";/* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE */
 
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -454,6 +454,6 @@ function hmrAcceptRun(bundle, id) {
 
 },{}],"Au1og":[function(require,module,exports) {
 
-},{}]},["6IKGt","Au1og"], "Au1og", "parcelRequiree60b")
+},{}]},["25D9z","Au1og"], "Au1og", "parcelRequiree60b")
 
 //# sourceMappingURL=index.3ebff041.js.map

@@ -86,9 +86,9 @@ body {
 .heading-primary {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  height: 70%;
+  margin-top: 25rem;
 }
 
 .heading-primary-main {
@@ -143,17 +143,28 @@ body {
     transform: translateX(0);
   }
 }
-.get-started {
+.btn-container {
   display: flex;
+  margin-top: 7rem;
   justify-content: center;
+  text-align: center;
+  font-size: 2rem;
+  text-transform: uppercase;
 }
 
-.get-started span {
+.btn-white {
+  display: flex;
+  width: 20rem;
+  height: 5rem;
   justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 100px;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: gray;
+  background-color: white;
   text-transform: uppercase;
-  background-color: #5a5252;
-  padding: 3rem;
-  border-radius: 25%;
 }
 
 /*# sourceMappingURL=main.css.map */
