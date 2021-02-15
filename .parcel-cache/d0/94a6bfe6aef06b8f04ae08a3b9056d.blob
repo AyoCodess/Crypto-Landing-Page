@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="d6d2c06ead6769c15538482b95d4a56e" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="css/icon-font.css" /> BUG --> 
+    <link rel="stylesheet" href="ff3ae5dbca6e34a05b4728e643d57822">
+    <link rel="shortcut icon" type="image/png" href="aae53ec59f7177a058866ecaac63c181">
+
+    <title>Natours | Exciting tours for adventurous people</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav-row">
+        <div class="logo-box"><img src="493de2f85a2207524c79b456f72e8a7b" alt="is it a good investment logo" class="logo"></div>
+      <ul class="nav-list">
+        <li class="nav-button">Binance</li>
+        <li class="nav-button">Celcius</li>
+        <li class="nav-button">Community</li>
+      </ul>
+      </nav>
+      <h1 class="heading-primary">
+        <span class="heading-primary-main">Get into crypto safely</span>
+        <span class="heading-primary-sub">Be apart of greatest transfer of wealth in our generation. </span>
+      </h1>
+      <button class="get-started">
+        <span>Get Started</span>
+      </button>
+    </header>
+  </body>
+</html>
+<script src="202f65accccb6071212b96a1d3c27081"></script>
