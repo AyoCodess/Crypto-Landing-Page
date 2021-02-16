@@ -1,11 +1,10 @@
-/*
-COLORS:
+//COLORS:
 
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
-
-*/
+$light-green: #7ed56f;
+$medium-green: #55c57a;
+$dark-green: #28b485;
+$color-white: #fff;
+$color-gray: #777777;
 
 /* this will universally set the parameters of the area we are working so our website in each browser looks the same. */
 
@@ -44,7 +43,7 @@ body {
     /* this determine the gap between each line of text, its 1.7 more than the standard */
 
     line-height: 1.7;
-    color: #777777;
+    color: $color-gray;
 
     /* where adding a padded border around the entire webpage to give it a nice WHITE bordered affect */
 
@@ -65,8 +64,8 @@ body {
 
     background-image: linear-gradient(
             to right bottom,
-            rgba(126, 213, 111, 0.801),
-            rgba(40, 180, 133, 0.801)
+            rgba($light-green, 0.8),
+            rgba($dark-green, 0.8)
         ),
         url(../img/hero.jpg);
 
@@ -101,7 +100,7 @@ body {
 
 .header__nav--button {
     margin-right: 4rem;
-    color: white;
+    color: $color-white;
 }
 
 /////////////////////////////////
@@ -134,7 +133,7 @@ body {
 .heading-primary--main {
     display: block;
     text-align: center;
-    color: white;
+    color: $color-white;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2rem;
@@ -148,7 +147,7 @@ body {
 .heading-primary--sub {
     display: block;
     text-align: center;
-    color: white;
+    color: $color-white;
     text-transform: uppercase;
     font-size: 2rem;
     font-weight: 400;
@@ -244,10 +243,11 @@ body {
     left: 0;
     z-index: -1;
     transition: all 0.5s;
+    animation: pulsing infinite;
 }
 
 .btn--white::before {
-    background-color: white;
+    background-color: $color-white;
 }
 
 .btn:hover::before {
@@ -256,8 +256,8 @@ body {
 }
 
 .btn--white {
-    color: gray;
-    background-color: white;
+    color: $color-gray;
+    background-color: $color-white;
     text-transform: uppercase;
     font-weight: 400;
 }
@@ -283,5 +283,16 @@ body {
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes pulsing {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: scaleX(1.4) scaleY(1.6);
     }
 }

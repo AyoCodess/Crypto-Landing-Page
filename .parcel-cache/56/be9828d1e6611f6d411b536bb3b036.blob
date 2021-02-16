@@ -8,12 +8,10 @@
   box-sizing: inherit;
   /* removes borders and paddings from the total width or total height that we specify for a box */
 }
-
 html {
   font-size: 62.5%;
   box-sizing: border-box;
 }
-
 body {
   /* if lato is not available any sans-serif be used. */
   font-family: "Lato", sans-serif;
@@ -25,7 +23,6 @@ body {
   /* where adding a padded border around the entire webpage to give it a nice WHITE bordered affect */
   padding: 3rem;
 }
-
 .header {
   display: flex;
   flex-direction: column;
@@ -33,7 +30,7 @@ body {
   height: 95vh;
   /* to get an image url, we used .. to go up one directory, then we can select it */
   /* later we add a gradient, we want the image to be on top, so the image is the last thing, that gets called in the line, we essentially have two background images, separated by comers */
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(hero.HASH_REF_e0594dc3b9cc25db552abd4cc90a588b.jpg);
   /* cover -  whatever the width of the view-port (what the user can see at anytime) it will always try to fit the element inside of the box */
   background-size: cover;
   /* ensures the image is always hinged to the top of the container, no matter what. if you change the size of the browser you will see the bottom of the image gets cropped but the top does not, use chrome dev tools to change it and see what happens */
@@ -41,24 +38,20 @@ body {
   /* now we want clip part of the header so it gives it an odd shape and looks really cool. we use a polygon to hide some of header shape, to make it look like another shane completely. the (4) x, y placeholders, represent each corder of the square, we replace them with coordinates that will change them to produce a new shape, you can make any share you want  clip-path: polygon(0% 0%, 100% 50%, 100% 50%, 0% 100%); = triangle (x = length, y = height) use CSS clip math maker to do this for you, we use 75vh, so when the view port changes, it changes the shape dynamically*/
   clip-path: polygon(0% 0%, 100% 0%, 100% 75vh, 0% 100%);
 }
-
 .header__nav--row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 5rem;
 }
-
 .header__nav--list {
   display: flex;
   list-style: none;
 }
-
 .header__nav--button {
   margin-right: 4rem;
   color: #fff;
 }
-
 .header__logo--box {
   display: flex;
   align-self: flex-start;
@@ -66,11 +59,9 @@ body {
   justify-content: flex-start;
   align-items: center;
 }
-
 .header__logo {
   height: 5rem;
 }
-
 .heading-primary {
   display: flex;
   flex-direction: column;
@@ -78,7 +69,6 @@ body {
   align-items: center;
   margin-top: 25rem;
 }
-
 .heading-primary--main {
   display: block;
   text-align: center;
@@ -90,7 +80,6 @@ body {
   animation-duration: 1s;
   animation-timing-function: ease-out;
 }
-
 .heading-primary--sub {
   display: block;
   text-align: center;
@@ -104,7 +93,6 @@ body {
   animation-duration: 1s;
   animation-timing-function: ease-out;
 }
-
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -138,7 +126,6 @@ body {
   text-align: center;
   font-size: 2rem;
 }
-
 .btn,
 .btn:link,
 .btn:visited {
@@ -155,17 +142,14 @@ body {
   transition: all 0.2s;
   position: relative;
 }
-
 .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);
 }
-
 .btn:active {
   transform: translateY(-1px);
   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.25);
 }
-
 .btn::before {
   content: "";
   display: block;
@@ -177,30 +161,25 @@ body {
   left: 0;
   z-index: -1;
   transition: all 0.5s;
-  animation: pulsing infinite;
 }
-
 .btn--white::before {
   background-color: #fff;
 }
-
 .btn:hover::before {
   transform: scaleX(1.4) scaleY(1.6);
   opacity: 0;
+  animation: infinite;
 }
-
 .btn--white {
   color: #777777;
   background-color: #fff;
   text-transform: uppercase;
   font-weight: 400;
 }
-
 .btn--animated {
   animation: moveUpButton 1s ease-out 0.75s;
   animation-fill-mode: backwards;
 }
-
 @keyframes moveUpButton {
   0% {
     opacity: 0;
@@ -214,14 +193,6 @@ body {
     transform: translateY(0);
   }
 }
-@keyframes pulsing {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    transform: scaleX(1.4) scaleY(1.6);
-  }
-}
 
-/*# sourceMappingURL=main.css.map */
+
+/*# sourceMappingURL=index.HASH_REF_f189ec66b93954c10d3de14fff97ef93.css.map */
