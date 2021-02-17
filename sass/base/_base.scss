@@ -1,0 +1,23 @@
+////////////////////////////////////
+
+/* this will universally set the parameters of the area we are working so our website in each browser looks the same. */
+
+/* THIS IS A BASIC RESET (*) */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+
+    /* removes borders and paddings from the total width or total height that we specify for a box */
+}
+
+html {
+    // DEFINES WHAT 1 REM SHOULD BE
+
+    font-size: 62.5%; //1rem = 10px, 10px/16 (the browser default) = 62.5%
+
+    box-sizing: border-box;
+}

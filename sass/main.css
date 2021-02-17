@@ -1,3 +1,42 @@
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  70% {
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  70% {
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes moveUpButton {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  70% {
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 /* this will universally set the parameters of the area we are working so our website in each browser looks the same. */
 /* THIS IS A BASIC RESET (*) */
 *,
@@ -26,51 +65,6 @@ body {
   padding: 3rem;
 }
 
-.header {
-  display: flex;
-  flex-direction: column;
-  /* vh means the element should always be 95% of what ever the user can see on his browser. */
-  height: 95vh;
-  /* to get an image url, we used .. to go up one directory, then we can select it */
-  /* later we add a gradient, we want the image to be on top, so the image is the last thing, that gets called in the line, we essentially have two background images, separated by comers */
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
-  /* cover -  whatever the width of the view-port (what the user can see at anytime) it will always try to fit the element inside of the box */
-  background-size: cover;
-  /* ensures the image is always hinged to the top of the container, no matter what. if you change the size of the browser you will see the bottom of the image gets cropped but the top does not, use chrome dev tools to change it and see what happens */
-  background-position: top;
-  /* now we want clip part of the header so it gives it an odd shape and looks really cool. we use a polygon to hide some of header shape, to make it look like another shane completely. the (4) x, y placeholders, represent each corder of the square, we replace them with coordinates that will change them to produce a new shape, you can make any share you want  clip-path: polygon(0% 0%, 100% 50%, 100% 50%, 0% 100%); = triangle (x = length, y = height) use CSS clip math maker to do this for you, we use 75vh, so when the view port changes, it changes the shape dynamically*/
-  clip-path: polygon(0% 0%, 100% 0%, 100% 75vh, 0% 100%);
-}
-
-.header__nav--row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 5rem;
-}
-
-.header__nav--list {
-  display: flex;
-  list-style: none;
-}
-
-.header__nav--button {
-  margin-right: 4rem;
-  color: #fff;
-}
-
-.header__logo--box {
-  display: flex;
-  align-self: flex-start;
-  margin-left: 7rem;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.header__logo {
-  height: 5rem;
-}
-
 .heading-primary {
   display: flex;
   flex-direction: column;
@@ -78,7 +72,6 @@ body {
   align-items: center;
   margin-top: 25rem;
 }
-
 .heading-primary--main {
   display: block;
   text-align: center;
@@ -90,7 +83,6 @@ body {
   animation-duration: 1s;
   animation-timing-function: ease-out;
 }
-
 .heading-primary--sub {
   display: block;
   text-align: center;
@@ -105,32 +97,6 @@ body {
   animation-timing-function: ease-out;
 }
 
-@keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-100px);
-  }
-  70% {
-    transform: translateX(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-@keyframes moveInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(100px);
-  }
-  70% {
-    transform: translateX(-10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
 .btn-container {
   display: flex;
   margin-top: 7rem;
@@ -155,18 +121,21 @@ body {
   transition: all 0.2s;
   position: relative;
 }
-
-.btn:hover {
+.btn:hover,
+.btn:link:hover,
+.btn:visited:hover {
   transform: translateY(-3px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);
 }
-
-.btn:active {
+.btn:active,
+.btn:link:active,
+.btn:visited:active {
   transform: translateY(-1px);
   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.25);
 }
-
-.btn::before {
+.btn::before,
+.btn:link::before,
+.btn:visited::before {
   content: "";
   display: block;
   height: 100%;
@@ -177,16 +146,17 @@ body {
   left: 0;
   z-index: -1;
   transition: all 0.5s;
-  animation: pulsing infinite;
 }
-
-.btn--white::before {
-  background-color: #fff;
-}
-
-.btn:hover::before {
+.btn:hover::before,
+.btn:link:hover::before,
+.btn:visited:hover::before {
   transform: scaleX(1.4) scaleY(1.6);
   opacity: 0;
+}
+
+.btn--animated {
+  animation: moveUpButton 1s ease-out 0.75s;
+  animation-fill-mode: backwards;
 }
 
 .btn--white {
@@ -195,33 +165,118 @@ body {
   text-transform: uppercase;
   font-weight: 400;
 }
-
-.btn--animated {
-  animation: moveUpButton 1s ease-out 0.75s;
-  animation-fill-mode: backwards;
+.btn--white::before {
+  background-color: #fff;
 }
 
-@keyframes moveUpButton {
-  0% {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-  70% {
-    transform: translateY(-10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.header {
+  display: flex;
+  flex-direction: column;
+  /* vh means the element should always be 95% of what ever the user can see on his browser. */
+  height: 95vh;
+  /* to get an image url, we used .. to go up one directory, then we can select it */
+  /* later we add a gradient, we want the image to be on top, so the image is the last thing, that gets called in the line, we essentially have two background images, separated by comers */
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  /* cover -  whatever the width of the view-port (what the user can see at anytime) it will always try to fit the element inside of the box */
+  background-size: cover;
+  /* ensures the image is always hinged to the top of the container, no matter what. if you change the size of the browser you will see the bottom of the image gets cropped but the top does not, use chrome dev tools to change it and see what happens */
+  background-position: top;
+  /* now we want clip part of the header so it gives it an odd shape and looks really cool. we use a polygon to hide some of header shape, to make it look like another shane completely. the (4) x, y placeholders, represent each corder of the square, we replace them with coordinates that will change them to produce a new shape, you can make any share you want  clip-path: polygon(0% 0%, 100% 50%, 100% 50%, 0% 100%); = triangle (x = length, y = height) use CSS clip math maker to do this for you, we use 75vh, so when the view port changes, it changes the shape dynamically*/
+  clip-path: polygon(0% 0%, 100% 0%, 100% 75vh, 0% 100%);
 }
-@keyframes pulsing {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    transform: scaleX(1.4) scaleY(1.6);
-  }
+.header__nav--row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5rem;
+}
+.header__nav--list {
+  display: flex;
+  list-style: none;
+}
+.header__nav--button {
+  margin-right: 4rem;
+  color: #fff;
+}
+.header__logo--box {
+  display: flex;
+  align-self: flex-start;
+  margin-left: 7rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+.header__logo {
+  height: 5rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.row1 {
+  display: flex;
+  color: white;
+}
+.row1 .no1 {
+  flex: 1;
+  background-color: #4fa46c;
+  padding: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-right: 4rem;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.25);
+}
+.row1 .no2 {
+  flex: 2;
+  background-color: #4fa46c;
+  padding: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
+}
+
+.row2 {
+  display: flex;
+  color: white;
+}
+.row2 .no3 {
+  flex: 4;
+  background-color: #4fa46c;
+  padding: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-right: 4rem;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.25);
+}
+.row2 .no4 {
+  flex: 1;
+  background-color: #4fa46c;
+  padding: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
+}
+
+.row3 {
+  display: flex;
+  color: white;
+}
+.row3 .no5 {
+  flex: 1;
+  background-color: #4fa46c;
+  padding: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-right: 4rem;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.25);
+}
+.row3 .no6 {
+  background-color: #4fa46c;
+  padding: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
 }
 
 /*# sourceMappingURL=main.css.map */

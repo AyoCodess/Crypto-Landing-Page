@@ -1,0 +1,91 @@
+/////////////////////////////////
+
+//BUTTON FLEX CONTAINER
+
+.btn-container {
+    display: flex;
+    margin-top: 7rem;
+    justify-content: center;
+    text-align: center;
+    font-size: 2rem;
+}
+
+/////////////////////////////////
+
+// BUTTON ELEMENT
+
+.btn,
+.btn:link,
+.btn:visited {
+    display: flex;
+    // position: absolute;
+    width: 20rem;
+    height: 5rem;
+    outline: none;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 100px;
+    font-size: 1.5rem;
+    box-shadow: 0 2rem 4rem rgba($color-black, 0.25);
+    transition: all 0.2s;
+    position: relative;
+
+    // BUTTON STATES
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.25);
+    }
+
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 1rem 1rem rgba($color-black, 0.25);
+    }
+
+    // BUTTON ANIMATION ELEMENT
+
+    &::before {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        border-radius: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all 0.5s;
+
+        // adding an pseudo element behind the button for an effect, once the effect is done the element disappears.
+    }
+
+    &:hover::before {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+    }
+}
+
+/////////////////////////////////
+
+// MAIN BUTTON ANIMATION
+
+.btn--animated {
+    animation: moveUpButton 1s ease-out 0.75s;
+    animation-fill-mode: backwards; //this automatically applies "moveUpButton" styles before its animation starts.
+}
+
+/////////////////////////////////
+
+//WHITE BUTTON STYLE
+
+.btn--white {
+    color: $color-gray;
+    background-color: $color-white;
+    text-transform: uppercase;
+    font-weight: 400;
+
+    &::before {
+        background-color: $color-white;
+    }
+}

@@ -1,0 +1,61 @@
+/////////////////////////////////
+
+// MAIN BODY OF THE WEBSITE TEXT STYLE
+
+body {
+    /* if lato is not available any sans-serif be used. */
+
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+
+    /* this determine the gap between each line of text, its 1.7 more than the standard */
+
+    line-height: 1.7;
+    color: $color-gray;
+
+    /* where adding a padded border around the entire webpage to give it a nice WHITE bordered affect */
+
+    padding: 3rem;
+}
+
+//////////////////////////////
+
+//MAIN AND SUB HEADING TEXT STYLES WITH ANIMATION
+
+.heading-primary {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    // height: 40%; //70|% of the heading container
+    margin-top: 25rem;
+
+    &--main {
+        display: block;
+        text-align: center;
+        color: $color-white;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2rem;
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+        // or
+        // animation: moveInLeft 1s ease-out
+    }
+
+    &--sub {
+        display: block;
+        text-align: center;
+        color: $color-white;
+        text-transform: uppercase;
+        font-size: 2rem;
+        font-weight: 400;
+        letter-spacing: 0.5rem;
+        margin-top: 1rem;
+        animation-name: moveInRight;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+    }
+}

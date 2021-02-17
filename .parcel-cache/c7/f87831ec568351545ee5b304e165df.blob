@@ -1,0 +1,19 @@
+/* Error: Top-level selectors may not contain the parent selector "&".
+ *     ,
+ * 263 | &--white {
+ *     | ^^^^^^^^^
+ *     '
+ *   sass/main.scss 263:1  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: Top-level selectors may not contain the parent selector "&".\a     \2577 \a 263 \2502  &--white {\a     \2502  ^^^^^^^^^\a     \2575 \a   sass/main.scss 263:1  root stylesheet';
+}
+
+/*# sourceMappingURL=index.HASH_REF_f189ec66b93954c10d3de14fff97ef93.css.map */

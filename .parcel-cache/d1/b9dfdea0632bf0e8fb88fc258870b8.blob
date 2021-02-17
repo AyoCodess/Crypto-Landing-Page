@@ -1,0 +1,21 @@
+/* Error: Top-level selectors may not contain the parent selector "&".
+ *     ,
+ * 204 | / .btn,
+ * 205 | | &:link,
+ * 206 | | &:visited {
+ *     | '----------^
+ *     '
+ *   sass/main.scss 204:1  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: Top-level selectors may not contain the parent selector "&".\a     \2577 \a 204 \2502  \250c  .btn,\a 205 \2502  \2502  &:link,\a 206 \2502  \2502  &:visited {\a     \2502  \2514 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 \2500 ^\a     \2575 \a   sass/main.scss 204:1  root stylesheet';
+}
+
+/*# sourceMappingURL=index.HASH_REF_f189ec66b93954c10d3de14fff97ef93.css.map */
